@@ -1,0 +1,20 @@
+{
+  "name": "bnsql-tools",
+  "interface": {
+    "displayName": "BNSQL"
+  },
+  "plugins": [
+    {
+      "name": "bnsql",
+      "source": {
+        "source": "local",
+        "path": "./plugins/bnsql"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Reverse Engineering"
+    }
+  ]
+}

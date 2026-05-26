@@ -1,0 +1,37 @@
+{
+  "name": "bnsql",
+  "version": "0.0.10",
+  "description": "SQL interface to Binary Ninja databases for querying and CRUD operations on functions, xrefs, strings, types, and decompiled code",
+  "author": {
+    "name": "Elias Bachaalany",
+    "email": "elias.bachaalany@gmail.com",
+    "url": "https://github.com/0xeb"
+  },
+  "homepage": "https://github.com/0xeb/bnsql",
+  "repository": "https://github.com/0xeb/bnsql-skills",
+  "license": "MIT",
+  "keywords": [
+    "binaryninja",
+    "reverse-engineering",
+    "sql",
+    "decompilation"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "BNSQL",
+    "shortDescription": "Reverse engineering skills for BNSQL-driven Binary Ninja workflows",
+    "longDescription": "Adds a namespaced BNSQL skill set for reverse engineering, decompilation, annotations, type recovery, and SQL-driven analysis inside Codex.",
+    "developerName": "Elias Bachaalany",
+    "category": "Reverse Engineering",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/0xeb/bnsql",
+    "defaultPrompt": [
+      "Start a BNSQL session and orient the database.",
+      "Trace callers and callees for this function.",
+      "Decompile this function and make it review-ready."
+    ]
+  }
+}

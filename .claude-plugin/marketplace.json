@@ -1,35 +1,23 @@
 {
-  "name": "0xeb-tools",
+  "name": "bnsql-tools",
   "owner": {
     "name": "Elias Bachaalany",
     "email": "elias.bachaalany@gmail.com"
   },
   "metadata": {
-    "description": "Reverse engineering, binary analysis tools and general purpose utilities"
+    "description": "SQL interface to Binary Ninja databases for reverse engineering workflows"
   },
   "plugins": [
     {
       "name": "bnsql",
-      "version": "0.0.9",
-      "description": "SQL interface to Binary Ninja databases for querying functions, xrefs, strings, and decompiled code",
+      "version": "0.0.10",
+      "description": "SQL interface to Binary Ninja databases for querying and CRUD operations on functions, xrefs, strings, types, and decompiled code",
       "author": {
         "name": "Elias Bachaalany",
         "email": "elias.bachaalany@gmail.com"
       },
       "source": "./plugins/bnsql",
       "keywords": ["binaryninja", "reverse-engineering", "sql", "decompilation"],
-      "category": "reverse-engineering"
-    },
-    {
-      "name": "idasql",
-      "version": "0.0.12",
-      "description": "SQL interface to IDA Pro databases for querying functions, xrefs, strings, and decompiled code",
-      "author": {
-        "name": "Elias Bachaalany",
-        "email": "elias.bachaalany@gmail.com"
-      },
-      "source": "./plugins/idasql",
-      "keywords": ["ida", "reverse-engineering", "sql", "decompilation"],
       "category": "reverse-engineering"
     }
   ]
