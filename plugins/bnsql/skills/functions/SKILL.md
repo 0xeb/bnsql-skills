@@ -32,9 +32,11 @@ pre-computed views (`callers`, `callees`) or pre-computed columns
 | Function | Description |
 |----------|-------------|
 | `disasm(addr)` | Single-instruction disassembly text |
-| `bytes(addr, count)` | Raw bytes as hex string |
-| `bytes_raw(addr, count)` | Raw bytes as BLOB |
 | `mnemonic(addr)` | Instruction mnemonic only |
+
+Byte reads use the `bytes` table:
+`SELECT hex(blob_concat(value)) FROM (SELECT value FROM bytes WHERE start_address = X AND n = N ORDER BY address)`
+(or `blob_concat(value)` for BLOB).
 
 ## Binary search
 

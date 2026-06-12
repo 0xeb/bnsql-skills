@@ -93,14 +93,12 @@ bnsql sample.bndb --mcp 9998
 | `.tables` | List all virtual tables |
 | `.schema [table]` | Show table schema |
 | `.info` | Show database metadata |
+| `.clear` / `.reset` | Clear/reset session |
 | `.quit` / `.exit` | Exit REPL |
 | `.help` | Show available commands |
 | `.http start` | Start HTTP server on random port |
 | `.http stop` | Stop HTTP server |
-| `.http status` | Show HTTP server status |
-| `.mcp start [port]` | Start MCP server |
-| `.mcp stop` | Stop MCP server |
-| `.mcp status` | Show MCP server status |
+| `.http` | Show HTTP server status (start if not running) |
 
 ### Performance Strategy
 

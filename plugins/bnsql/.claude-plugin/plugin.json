@@ -1,6 +1,6 @@
 {
   "name": "bnsql",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "SQL interface to Binary Ninja databases for querying and CRUD operations on functions, xrefs, strings, types, and decompiled code",
   "author": {
     "name": "Elias Bachaalany",

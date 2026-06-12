@@ -24,9 +24,21 @@ allowed-tools:
 | `search_bytes(pattern)` | Find all matches; returns JSON array |
 | `search_bytes(pattern, start, end)` | Search within an address range |
 | `search_first(pattern)` | First match address (or NULL) |
-| `bytes(addr, count)` | Read raw bytes (as hex string) |
-| `bytes_raw(addr, count)` | Read raw bytes (as BLOB) |
 | `hex(val)` | Format integer as hex |
+
+## Byte reads via the `bytes` table
+
+```sql
+-- N bytes as uppercase hex
+SELECT hex(blob_concat(value)) FROM (
+  SELECT value FROM bytes WHERE start_address = X AND n = N ORDER BY address);
+
+-- N bytes as BLOB
+SELECT blob_concat(value) FROM (
+  SELECT value FROM bytes WHERE start_address = X AND n = N ORDER BY address);
+```
+
+`start_address` and `n` are hidden input columns paired for bounded reads. `start_address` is deliberately distinct from the visible `address` column so any user predicate on `address` (e.g. inside a JOIN) stays enforceable by SQLite. Use the `patches` table for byte patching.
 
 ### Pattern syntax (Binary Ninja native)
 
