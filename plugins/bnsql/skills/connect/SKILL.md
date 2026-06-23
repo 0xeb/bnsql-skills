@@ -193,6 +193,21 @@ shared agent behavior model.
   whether the surface is available in this binary view.
 - On timeout: narrow scope, add constraints, paginate, or split the query.
 
+### Output Contract
+
+- **Selection** — decide *whether and how much* to surface from user intent.
+  Answer questions directly ("biggest is `_main`, 2851 bytes"); show supporting
+  rows only when they help the user verify; don't dump full tables unprompted;
+  never surface data fetched only as an intermediate reasoning step.
+- **Fidelity** — when you *do* present code/data, show the real artifact
+  (decompilation, actual rows), never a paraphrase.
+- **Mechanics** — the HTTP `/query` response is a JSON envelope
+  (`{success, results:[{columns,rows,…}]}`). Consume it directly and render in
+  your reply. Do **not** pipe responses through `python`/`jq` to pre-render a
+  table — that discards the `success`/`elapsed_ms`/`error` fields and makes you
+  reason over a lossy view. The CLI (`-c`/`-f`) already prints a table. Reserve
+  `jq`/`python` for extracting a value to feed a later query.
+
 ---
 
 ## Skill Routing Matrix (Intent → Skill)
